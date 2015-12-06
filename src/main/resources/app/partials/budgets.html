@@ -1,5 +1,5 @@
 <section class="content-header">
-  <h2>Manage Budget</h2>
+  <h2>Gestion des Budgets</h2>
 </section>
 
 <section class="content">
@@ -11,7 +11,7 @@
         </div>
         <div class="col-sm-9">
           <div class="pull-right">
-            <a href="/budgets/new" class="btn btn-primary"><span class="fa fa-plus"></span> Add Budget</a>
+            <a href="/budgets/new" class="btn btn-primary"><span class="fa fa-plus"></span> Ajouter un budget</a>
           </div>
         </div>
       </div>
@@ -33,12 +33,12 @@
           <table foo-table class="table footable" ng-model="budgets" ng-show="budgets.length">
             <thead>
             <tr>
-              <th>Category</th>
-              <th>Name</th>
-              <th>Projected</th>
-              <th>Actual</th>
-              <th>Remaining</th>
-              <th>Period</th>
+              <th>Catégorie</th>
+              <th>Nom</th>
+              <th>Prévision</th>
+              <th>Actuellement</th>
+              <th>Restes</th>
+              <th>Période</th>
               <th class="actions" data-sort-ignore="true">Actions</th>
             </tr>
             </thead>
@@ -51,7 +51,7 @@
               <td>{{(budget.projected - budget.actual) | currency}}</td>
               <td>{{budget.period | yearMonth}}</td>
               <td class="actions">
-                <button type="button" class="btn btn-danger" ng-click="confirmDelete(budget)"><span class="fa fa-trash-o"></span> Delete</button>
+                <button type="button" class="btn btn-danger" ng-click="confirmDelete(budget)"><span class="fa fa-trash-o"></span> Supprimer</button>
               </td>
             </tr>
             </tbody>

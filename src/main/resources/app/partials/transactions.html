@@ -4,15 +4,15 @@
 <div class="modal-body">
   <div ng-hide="transactionsLoaded" class="loading"></div>
   <div ng-hide="transactions.length || !transactionsLoaded" class="no-result">
-    <h2>No transaction</h2>
+    <h2>Pas de transaction</h2>
   </div>
   <table class="table" ng-show="transactions.length">
     <thead>
     <tr>
-      <th>Amount</th>
-      <th>Remark</th>
-      <th>Recurring?</th>
-      <th>Transaction Date</th>
+      <th>Montant</th>
+      <th>Remarque</th>
+      <th>Periodique?</th>
+      <th>Date de la transaction</th>
       <th ng-show="transactionAction">Action</th>
     </tr>
     </thead>

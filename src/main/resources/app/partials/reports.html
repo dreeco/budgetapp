@@ -1,5 +1,5 @@
 <section class="content-header">
-  <h2>Reports</h2>
+  <h2>Rapports</h2>
 </section>
 
 <section class="content">
@@ -7,33 +7,33 @@
     <div class="col-md-10 col-md-offset-1">
       <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title">Search Form</h3>
+          <h3 class="box-title">Formulaire de recherche</h3>
         </div>
         <div class="box-body">
           <form class="form-horizontal" role="form">
             <div class="form-group">
-              <label for="minAmount" class="col-sm-2 control-label">Min Amount</label>
+              <label for="minAmount" class="col-sm-2 control-label">Montant min</label>
               <div class="col-sm-4">
-                <input type="number" class="form-control" id="minAmount" placeholder="Transaction Min Amount" ng-model="search.minAmount">
+                <input type="number" class="form-control" id="minAmount" placeholder="Montant minimal de la transaction" ng-model="search.minAmount">
               </div>
-              <label for="maxAmount" class="col-sm-2 control-label">Max Amount</label>
+              <label for="maxAmount" class="col-sm-2 control-label">Montant max</label>
               <div class="col-sm-4">
-                <input type="number" class="form-control" id="maxAmount" placeholder="Transaction Max Amount" ng-model="search.maxAmount">
+                <input type="number" class="form-control" id="maxAmount" placeholder="Montant maximal de la transaction" ng-model="search.maxAmount">
               </div>
             </div>
             <div class="form-group">
-              <label for="startOn" class="col-sm-2 control-label">Start Date</label>
+              <label for="startOn" class="col-sm-2 control-label">Date de début</label>
               <div class="col-sm-4">
-                <input type="date" class="form-control" id="startOn" placeholder="Transaction Start Date (yyyy-mm-dd)" ng-model-options="{ timezone: 'UTC' }" ng-model="search.startOn">
+                <input type="date" class="form-control" id="startOn" placeholder="Date de Début (yyyy-mm-dd)" ng-model-options="{ timezone: 'UTC' }" ng-model="search.startOn">
               </div>
-              <label for="endOn" class="col-sm-2 control-label">End Date</label>
+              <label for="endOn" class="col-sm-2 control-label">Date de fin</label>
               <div class="col-sm-4">
-                <input type="date" class="form-control" id="endOn" placeholder="Transaction End Date (yyyy-mm-dd)" ng-model-options="{ timezone: 'UTC' }" ng-model="search.endOn">
+                <input type="date" class="form-control" id="endOn" placeholder="Date de fin (yyyy-mm-dd)" ng-model-options="{ timezone: 'UTC' }" ng-model="search.endOn">
               </div>
             </div>
             <div class="actions">
               <button type="button" class="btn btn-primary" ng-click="doSearch()" ng-disabled="!transactionsLoaded">
-                <span class="fa fa-search" ng-show="transactionsLoaded"></span><span class="fa fa-spinner fa-spin" ng-show="!transactionsLoaded"></span> Search</button>
+                <span class="fa fa-search" ng-show="transactionsLoaded"></span><span class="fa fa-spinner fa-spin" ng-show="!transactionsLoaded"></span> Recherche</button>
             </div>
           </form>
         </div>
@@ -48,15 +48,15 @@
           <div ng-hide="transactionsLoaded" class="loading"></div>
 
           <div ng-hide="transactions.length || !transactionsLoaded" class="no-result">
-            <h2>No transaction found</h2>
+            <h2>Pas de transaction trouvée</h2>
           </div>
           <table foo-table class="table footable" ng-model="transactions" ng-show="transactions.length && transactionsLoaded">
             <thead>
             <tr>
-              <th>Name</th>
-              <th>Amount</th>
-              <th>Remark</th>
-              <th>Transaction Date</th>
+              <th>Nom</th>
+              <th>Montant</th>
+              <th>Remarque</th>
+              <th>Date de transaction</th>
             </tr>
             </thead>
             <tbody>

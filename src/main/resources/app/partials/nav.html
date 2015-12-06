@@ -3,7 +3,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">Navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -14,16 +14,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" ng-class="{'in':!navCollapsed}">
             <ul class="nav navbar-nav">
-                <li><a href="/manage">Home</a></li>
-                <li><a href="/recurrings">Recurring</a></li>
+                <li><a href="/manage">Accueil</a></li>
+                <li><a href="/recurrings">Transaction périodiques</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{$root.username}} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/settings"><span class="fa fa-cog"></span> Settings</a></li>
-                        <li><a href="/profile"><span class="fa fa-user"></span> Profile</a></li>
-                        <li><a href="/logout"><span class="fa fa-power-off"></span> Logout</a></li>
+                        <li><a href="/settings"><span class="fa fa-cog"></span> Paramètres</a></li>
+                        <li><a href="/profile"><span class="fa fa-user"></span> Profil</a></li>
+                        <li><a href="/logout"><span class="fa fa-power-off"></span> Déconnexion</a></li>
                     </ul>
                 </li>
             </ul>

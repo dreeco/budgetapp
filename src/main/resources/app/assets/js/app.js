@@ -14,7 +14,7 @@ budgetApp.config(['$routeProvider', '$httpProvider', '$locationProvider', 'Analy
         $httpProvider.interceptors.push('TokenInterceptor');
 
         // initial configuration
-        AnalyticsProvider.setAccount('UA-53663138-1');
+        //AnalyticsProvider.setAccount('UA-53663138-1');
 
         // track all routes (or not)
         AnalyticsProvider.trackPages(true);
@@ -327,15 +327,15 @@ angular.module('budgetApp').filter('icon', function() {
   var icons = [
     {
       icon: 'money',
-      keywords: ['money', 'income', 'salary', 'bonus', 'wages', 'dividend', 'saving']
+      keywords: ['monnaie', 'argent', 'revenu', 'salaire', 'primes', 'dividende', 'epargne']
     },
     {
       icon: 'home',
-      keywords: ['home', 'house']
+      keywords: ['maison']
     },
     {
       icon: 'shopping-cart',
-      keywords: ['daily', 'living', 'shopping']
+      keywords: ['courses', 'vie quotidienne', 'shopping']
     },
     {
       icon: 'bus',

@@ -1,5 +1,5 @@
 <section class="content-header">
-  <h2>Manage Budget</h2>
+  <h2>Gestion Budget</h2>
 </section>
 
 <section class="content">
@@ -10,63 +10,63 @@
     <form name="updateBudgetForm" novalidate class="form-horizontal" role="form">
       <div class="modal-body">
         <div class="form-group" ng-class="{true: 'has-error'}[updateBudgetForm.name.$dirty && updateBudgetForm.name.$invalid]">
-          <label for="name" class="col-sm-3 control-label">Name</label>
+          <label for="name" class="col-sm-3 control-label">Nom</label>
           <div class="col-sm-7">
-            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" ng-model="selected.name" required>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nom" ng-model="selected.name" required>
           </div>
         </div>
         <div class="form-group" ng-class="{true: 'has-error'}[updateBudgetForm.projected.$dirty && updateBudgetForm.projected.$invalid]">
-          <label for="projected" class="col-sm-3 control-label">Projected</label>
+          <label for="projected" class="col-sm-3 control-label">Prévisions</label>
           <div class="col-sm-7">
-            <input type="number" step="1" min="0" ng-min="0" class="form-control" id="projected" name="projected" placeholder="Enter Projected Amount" ng-model="selected.projected">
+            <input type="number" step="1" min="0" ng-min="0" class="form-control" id="projected" name="projected" placeholder="Montant prévu" ng-model="selected.projected">
           </div>
         </div>
         <div class="form-group" ng-show="selected.category.type == 'INCOME'">
-          <label for="actual" class="col-sm-3 control-label">Actual</label>
+          <label for="actual" class="col-sm-3 control-label">Actuel</label>
           <div class="col-sm-7">
-            <input type="number" step="1" min="0" ng-min="0" class="form-control" id="actual" name="actual" placeholder="Enter Actual Amount" ng-model="selected.actual">
+            <input type="number" step="1" min="0" ng-min="0" class="form-control" id="actual" name="actual" placeholder="Montant actuel" ng-model="selected.actual">
           </div>
         </div>
         <div class="form-group" ng-show="selected.category.type == 'EXPENDITURE'">
-          <label class="col-sm-3 control-label">Actual</label>
+          <label class="col-sm-3 control-label">Actuel</label>
           <div class="col-sm-7">
             <p class="form-control-static">{{selected.actual | currency}}</p>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button type="button" class="btn btn-default" ng-click="cancel()">Annuler</button>
         <button type="submit" class="btn btn-primary" ng-click="ok()" ng-disabled="updateBudgetForm.$invalid">
-          <span class="fa fa-save" ng-hide="selected.loading"></span><span class="fa fa-spinner fa-spin" ng-show="selected.loading"></span> Save</button>
+          <span class="fa fa-save" ng-hide="selected.loading"></span><span class="fa fa-spinner fa-spin" ng-show="selected.loading"></span> Enregistrer</button>
       </div>
     </form>
   </script>
 
   <script type="text/ng-template" id="transactionModal.html">
     <div class="modal-header">
-      <h3 class="modal-title">Add Transaction: {{selected.name}}</h3>
+      <h3 class="modal-title">Ajouter transaction: {{selected.name}}</h3>
     </div>
     <form name="form" novalidate class="form-horizontal" role="form">
       <div class="modal-body">
         <div class="form-group has-feedback" ng-class="errorClass('amount')">
-          <label for="amount" class="col-sm-3 control-label">Amount</label>
+          <label for="amount" class="col-sm-3 control-label">Montant</label>
           <div class="col-sm-7">
-            <input type="number" step="1" class="form-control" id="amount" name="amount" placeholder="Enter Transaction Amount" autofocus ng-model="transaction.amount" required>
+            <input type="number" step="1" class="form-control" id="amount" name="amount" placeholder="Montant de la transaction" autofocus ng-model="transaction.amount" required>
             <span class="help-block" ng-show="form.amount.$invalid && form.amount.$dirty">
               {{errorMessage('amount')}}
             </span>
           </div>
         </div>
         <div class="form-group">
-          <label for="remark" class="col-sm-3 control-label">Remark</label>
+          <label for="remark" class="col-sm-3 control-label">Remarque</label>
           <div class="col-sm-7">
-            <textarea class="form-control" id="remark" name="remark" rows="3" placeholder="Enter Remark" ng-model="transaction.remark"></textarea>
+            <textarea class="form-control" id="remark" name="remark" rows="3" placeholder="Remarque" ng-model="transaction.remark"></textarea>
           </div>
         </div>
         <div class="form-group has-feedback" ng-class="errorClass('transactionOn')">
-          <label for="transactionOn" class="col-sm-3 control-label">Transaction Date</label>
+          <label for="transactionOn" class="col-sm-3 control-label">Date de la transaction</label>
           <div class="col-sm-7">
-            <input type="date" class="form-control" id="transactionOn" name="transactionOn" placeholder="Enter Transaction Date (yyyy-mm-dd)" ng-model-options="{ timezone: 'UTC' }" ng-model="transaction.transactionOn">
+            <input type="date" class="form-control" id="transactionOn" name="transactionOn" placeholder="Entrer la date de la transaction (yyyy-mm-dd)" ng-model-options="{ timezone: 'UTC' }" ng-model="transaction.transactionOn">
             <span class="help-block" ng-show="form.transactionOn.$invalid && form.transactionOn.$dirty">
               {{errorMessage('transactionOn')}}
             </span>
@@ -76,19 +76,19 @@
           <div class="col-sm-10 col-sm-offset-3">
             <div class="checkbox">
               <label>
-                <input type="checkbox" id="recurring" value="true" ng-model="transaction.recurring"> Recurring?
+                <input type="checkbox" id="recurring" value="true" ng-model="transaction.recurring"> Périodique?
               </label>
             </div>
           </div>
         </div>
         <div class="form-group has-feedback"  ng-class="errorClass('recurringType')" ng-show="transaction.recurring">
-          <label for="recurringType" class="col-sm-3 control-label">Recurring Type</label>
+          <label for="recurringType" class="col-sm-3 control-label">Periodicité</label>
           <div class="col-sm-7">
             <select id="recurringType" name="recurringType" class="form-control" ng-model="transaction.recurringType">
-              <option value="DAILY">Daily</option>
-              <option value="WEEKLY">Weekly</option>
-              <option value="MONTHLY">Monthly</option>
-              <option value="YEARLY">Yearly</option>
+              <option value="DAILY">Quotidienne</option>
+              <option value="WEEKLY">Hebdomadaire</option>
+              <option value="MONTHLY">Mensuelle</option>
+              <option value="YEARLY">Annuelle</option>
             </select>
             <span class="help-block" ng-show="form.recurringType.$invalid && form.recurringType.$dirty">
               {{errorMessage('recurringType')}}
@@ -97,9 +97,9 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button type="button" class="btn btn-default" ng-click="cancel()">Annuler</button>
         <button type="submit" class="btn btn-primary" ng-click="ok(form)" ng-disabled="transaction.loading">
-          <span class="fa fa-save" ng-hide="transaction.loading"></span><span class="fa fa-spinner fa-spin" ng-show="transaction.loading"></span> Submit
+          <span class="fa fa-save" ng-hide="transaction.loading"></span><span class="fa fa-spinner fa-spin" ng-show="transaction.loading"></span> Valider
         </button>
       </div>
     </form>
@@ -145,10 +145,10 @@
         <div class="panel-body budgets income">
           <ul class="list-unstyled list-budgets">
             <li class="budget-header">
-              <span class="name">Name</span>
+              <span class="name">Nom</span>
               <div class="pull-right">
-                <div class="projected">Projected</div>
-                <div class="actual">Actual</div>
+                <div class="projected">Prévision</div>
+                <div class="actual">Actuel</div>
               </div>
               <div class="clearfix"></div>
             </li>
@@ -184,11 +184,11 @@
           <div class="panel-body budgets">
             <ul class="list-unstyled list-budgets">
               <li class="budget-header">
-                <span class="name">Name</span>
+                <span class="name">Nom</span>
                 <div class="pull-right">
-                  <div class="projected">Projected</div>
-                  <div class="actual">Actual</div>
-                  <div class="remaining">Remaining</div>
+                  <div class="projected">Prévision</div>
+                  <div class="actual">Actuel</div>
+                  <div class="remaining">Restant</div>
                 </div>
                 <div class="clearfix"></div>
               </li>

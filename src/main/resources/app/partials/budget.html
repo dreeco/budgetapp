@@ -1,5 +1,5 @@
 <section class="content-header">
-  <h2>Manage Budget</h2>
+  <h2>Gestion de budget</h2>
 </section>
 
 <section class="content">
@@ -12,12 +12,12 @@
     <div class="col-md-10 col-md-offset-1">
       <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title">Add Budget</h3>
+          <h3 class="box-title">Ajouter un budget</h3>
         </div>
         <div class="box-body">
           <form name="form" novalidate role="form" class="form-horizontal">
             <div class="form-group has-feedback" ng-class="errorClass('categoryId')">
-              <label for="categoryId" class="col-sm-3 control-label">Category</label>
+              <label for="categoryId" class="col-sm-3 control-label">Catégorie</label>
               <div class="col-sm-7">
                 <div class="form-control-static" ng-hide="loaded">
                   <div class="loading"></div>
@@ -29,18 +29,18 @@
               </div>
             </div>
             <div class="form-group has-feedback" ng-class="errorClass('name')">
-              <label for="name" class="col-sm-3 control-label">Name</label>
+              <label for="name" class="col-sm-3 control-label">Nom</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" ng-model="budget.name">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Nom du budget" ng-model="budget.name">
                 <span class="help-block" ng-show="form.name.$invalid && form.name.$dirty">
                   {{errorMessage('name')}}
                 </span>
               </div>
             </div>
             <div class="form-group has-feedback" ng-class="errorClass('projected')">
-              <label for="projected" class="col-sm-3 control-label">Projected</label>
+              <label for="projected" class="col-sm-3 control-label">Prévisions</label>
               <div class="col-sm-7">
-                <input type="number" class="form-control" name="projected" id="projected" placeholder="Enter Projected Amount" ng-model="budget.projected">
+                <input type="number" class="form-control" name="projected" id="projected" placeholder="Montant prévu du budget" ng-model="budget.projected">
                 <span class="help-block" ng-show="form.projected.$invalid && form.projected.$dirty">
                   {{errorMessage('projected')}}
                 </span>
@@ -48,8 +48,8 @@
             </div>
             <div class="form-group">
               <div class="col-sm-offset-3 col-sm-7">
-                <a class="btn btn-default" href="/budgets">Back</a>
-                <button type="submit" class="btn btn-primary" ng-click="createBudget()"><span class="fa fa-save"></span> Submit</button>
+                <a class="btn btn-default" href="/budgets">Retour</a>
+                <button type="submit" class="btn btn-primary" ng-click="createBudget()"><span class="fa fa-save"></span> Valider</button>
               </div>
             </div>
           </form>

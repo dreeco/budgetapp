@@ -1,5 +1,5 @@
 <section class="content-header">
-  <h2>Manage Recurring</h2>
+  <h2>Gestion des transaction périodiques</h2>
 </section>
 
 <section class="content">
@@ -11,7 +11,7 @@
         </div>
         <div class="col-sm-9">
           <div class="pull-right">
-            <a href="/recurrings/new" class="btn btn-primary" ><span class="fa fa-plus"></span> Add Recurring</a>
+            <a href="/recurrings/new" class="btn btn-primary" ><span class="fa fa-plus"></span> Ajouter une transaction périodique</a>
           </div>
         </div>
       </div>
@@ -26,22 +26,22 @@
     <div class="col-lg-12">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Recurrings</h3>
+          <h3 class="panel-title">Transaction périodiques</h3>
         </div>
         <div class="panel-body">
           <div ng-hide="loaded" class="loading"></div>
           <div ng-hide="recurrings.length || !loaded" class="no-result">
-            <h2>No Recurring</h2>
+            <h2>Pas de transaction</h2>
           </div>
           <table foo-table class="table footable" ng-model="recurrings" ng-show="recurrings.length">
             <thead>
             <tr>
-              <th>Name</th>
-              <th>Amount</th>
-              <th>Type</th>
-              <th>Remark</th>
-              <th>Last Run Date</th>
-              <th>Created Date</th>
+              <th>Nom</th>
+              <th>Montant</th>
+              <th>Périodicité</th>
+              <th>Remarque</th>
+              <th>Date de début</th>
+              <th>Date de création</th>
               <th class="actions" data-sort-ignore="true">Actions</th>
             </tr>
             </thead>
@@ -55,7 +55,7 @@
               <td>{{recurring.createdAt | date}}</td>
               <td class="actions">
                 <button type="button" class="btn btn-primary" ng-click="openRecurringModal(recurring)" title="View transactions"><span class="fa fa-list-ul"></span> Transactions</button>
-                <button type="button" class="btn btn-danger" ng-click="confirmDelete(recurring)"><span class="fa fa-trash-o"></span> Delete</button>
+                <button type="button" class="btn btn-danger" ng-click="confirmDelete(recurring)"><span class="fa fa-trash-o"></span> Supprimer</button>
               </td>
             </tr>
             </tbody>

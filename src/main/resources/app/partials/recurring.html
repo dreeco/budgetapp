@@ -1,5 +1,5 @@
 <section class="content-header">
-  <h2>Manage Recurring</h2>
+  <h2>Gestion de transaction périodique</h2>
 </section>
 
 <section class="content">
@@ -12,7 +12,7 @@
     <div class="col-md-10 col-md-offset-1">
       <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title">Add Recurring</h3>
+          <h3 class="box-title">Ajouter une transaction périodique</h3>
         </div>
         <div class="box-body">
           <form name="form" novalidate role="form" class="form-horizontal">
@@ -29,7 +29,7 @@
               </div>
             </div>
             <div class="form-group has-feedback" ng-class="errorClass('amount')">
-              <label for="amount" class="col-sm-3 control-label">Amount</label>
+              <label for="amount" class="col-sm-3 control-label">Montant</label>
               <div class="col-sm-7">
                 <input type="number" step="1" class="form-control" id="amount" name="amount" placeholder="Enter Amount" ng-model="recurring.amount">
                 <span class="help-block" ng-show="form.amount.$invalid && form.amount.$dirty">
@@ -38,22 +38,22 @@
               </div>
             </div>
             <div class="form-group has-feedback"  ng-class="errorClass('recurringAt')">
-              <label for="recurringAt" class="col-sm-3 control-label">Recurring Date</label>
+              <label for="recurringAt" class="col-sm-3 control-label">Date de récurrence</label>
               <div class="col-sm-7">
-                <input type="date" id="recurringAt" name="recurringAt" class="form-control" placeholder="Enter Recurring Date (yyyy-mm-dd)" ng-model-options="{ timezone: 'UTC' }" ng-model="recurring.recurringAt" />
+                <input type="date" id="recurringAt" name="recurringAt" class="form-control" placeholder="Date de récurrence (yyyy-mm-dd)" ng-model-options="{ timezone: 'UTC' }" ng-model="recurring.recurringAt" />
                 <span class="help-block" ng-show="form.recurringAt.$invalid && form.recurringAt.$dirty">
                   {{errorMessage('recurringAt')}}
                 </span>
               </div>
             </div>
             <div class="form-group has-feedback"  ng-class="errorClass('recurringType')">
-              <label for="recurringType" class="col-sm-3 control-label">Recurring Type</label>
+              <label for="recurringType" class="col-sm-3 control-label">Périodicité</label>
               <div class="col-sm-7">
                 <select id="recurringType" name="recurringType" class="form-control" ng-model="recurring.recurringType">
-                  <option value="DAILY">Daily</option>
-                  <option value="WEEKLY">Weekly</option>
-                  <option value="MONTHLY">Monthly</option>
-                  <option value="YEARLY">Yearly</option>
+                  <option value="DAILY">Quotidienne</option>
+                  <option value="WEEKLY">Hebdomadaire</option>
+                  <option value="MONTHLY">Mensuelle</option>
+                  <option value="YEARLY">Annuelle</option>
                 </select>
                 <span class="help-block" ng-show="form.recurringType.$invalid && form.recurringType.$dirty">
                   {{errorMessage('recurringType')}}
@@ -61,15 +61,15 @@
               </div>
             </div>
             <div class="form-group has-feedback">
-              <label for="remark" class="col-sm-3 control-label">Remark</label>
+              <label for="remark" class="col-sm-3 control-label">Remarque</label>
               <div class="col-sm-7">
-                <textarea id="remark" name="remark" class="form-control" ng-model="recurring.remark" rows="3" placeholder="Enter Remark"></textarea>
+                <textarea id="remark" name="remark" class="form-control" ng-model="recurring.remark" rows="3" placeholder="Remarque"></textarea>
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-offset-3 col-sm-7">
-                <a class="btn btn-default" href="/recurrings">Back</a>
-                <button type="submit" class="btn btn-primary" ng-click="createRecurring()"><span class="fa fa-save"></span> Submit</button>
+                <a class="btn btn-default" href="/recurrings">Retour</a>
+                <button type="submit" class="btn btn-primary" ng-click="createRecurring()"><span class="fa fa-save"></span> Valider</button>
               </div>
             </div>
           </form>

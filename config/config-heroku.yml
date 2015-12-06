@@ -5,10 +5,10 @@ database:
   driverClass: org.hsqldb.jdbcDriver
 
   # the username
-  user: 
+  #user: 
 
   # the password
-  password:
+  #password:
 
   # the JDBC URL
   url: <%= ENV['DATABASE_URL'] %>

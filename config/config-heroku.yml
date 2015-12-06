@@ -5,13 +5,13 @@ database:
   driverClass: org.hsqldb.jdbcDriver
 
   # the username
-  user: sa
+  user: 
 
   # the password
   password:
 
   # the JDBC URL
-  url: jdbc:hsqldb:mem:test;sql.syntax_pgs=true
+  url: DATABASE_URL
 
   # any properties specific to JDBC driver:
   properties:
